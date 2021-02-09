@@ -1,40 +1,36 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analog CLock UI</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class ="clock_ui">
-      <div class="heading">
-          <h2>Clock</h2>
-      </div>  
-      <div class="analog_clock"></div>
-      <div class="hour">
-          <div class="hr">
-
-          </div>
-     <div class="min">
-            <div class="mn">
-
-            </div>
-     <div class="sec">
-            <div class="sc">
-
-            </div>
-     <div class="digital_clock">
-         <div class="hours">10</div>
-         <div class="minutes">15</div>
-         <div class="ampm">am</div>
-
-     </div>
-
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Clock Design</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="clock">
+      <h2>The Time is Now:</h2>
+      <div id="time">
+        <div><span id="hour">00</span> <span>Hours</span></div>
+        <div><span id="minutes">00</span> <span>Minutes</span></div>
+        <div><span id="seconds">00</span> <span>Seconds</span></div>
       </div>
-
-
     </div>
-    
-</body>
+    <script type="text/javascript">
+      function clock() {
+        const hours = document.getElementById('hour');
+        const minutes = document.getElementById('minutes');
+        const seconds = document.getElementById('seconds');
+
+        let h = new Date().getHours();
+        let m = new Date().getMinutes();
+        let s = new Date().getSeconds();
+
+        hours.innerHTML = h;
+        minutes.innerHTML = m;
+        seconds.innerHTML = s;
+      }
+      const interval = setInterval(clock, 1000);
+    </script>
+  </body>
 </html>
